@@ -4,7 +4,6 @@ import {alretScriptGet} from "../utils/function.js";
 // CREATE Alert
 export const createAlert = async (req, res) => {
     try {
-        console.log("ll")
         const alert = await StockAlert.create(req.body);
         // for update map of script
         await alretScriptGet()
