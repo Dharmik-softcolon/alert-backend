@@ -6,11 +6,10 @@ import Route from './src/routes/index.js';
 
 const app = express();
 
-connectDB(); // Connect to MongoDB
+connectDB();
 
 app.use(express.json());
 
-// Mount routes
 app.use('/api/stocks', Route);
 
 app.get('/', (req, res) => {
