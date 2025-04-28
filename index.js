@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 
 console.log(`CURRANT TIME: [${moment().format('hh:mm A DD/MMM/YYYY')}]`);
 
-app.listen(config.port, () => {
-    console.log(`Server running on port ${config.port}`);
-});
+// app.listen(config.port, () => {
+//     console.log(`Server running on port ${config.port}`);
+// });
 
 export default app
