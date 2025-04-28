@@ -3,7 +3,6 @@ import { connectDB } from './src/config/db.js';
 import config from './src/config/config.js';
 import moment from 'moment';
 import Route from './src/routes/index.js';
-import serverless from 'serverless-http';
 
 const app = express();
 
@@ -20,4 +19,4 @@ app.get('/', (req, res) => {
 
 console.log(`CURRANT TIME: [${moment().format('hh:mm A DD/MMM/YYYY')}]`);
 
-export const handler = serverless(app);
+
