@@ -10,7 +10,7 @@ connectDB();
 
 app.use(express.json());
 
-app.use('/api/stocks', Route);
+app.use('/stocks', Route);
 
 app.get('/', (req, res) => {
     res.send('Stock Alert Server Running');
