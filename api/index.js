@@ -1,8 +1,8 @@
 import express from 'express';
-import { connectDB } from './src/config/db.js';
-import config from './src/config/config.js';
+import { connectDB } from '../src/config/db.js';
+// import config from '../src/config/config.js';
 import moment from 'moment';
-import Route from './src/routes/index.js';
+import Route from '../src/routes/index.js';
 
 const app = express();
 
