@@ -1,0 +1,53 @@
+# Node.js modules
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+/dist/
+/build/
+/coverage/
+
+# IDE and editor specific files
+.idea/
+.vscode/
+
+# Dependencies
+package-lock.json
+yarn.lock
+
+# Test and coverage output
+/coverage/
+
+# Optional: Ignore local databases if any
+/db/
+
+# Optional: Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore files related to Docker if using Docker
+.dockerignore
+
+# Ignore custom config files (if any)
+config/*
+
+# Optional: Ignore cache files
+.cache/
+
+# for webstrom
+.idea
