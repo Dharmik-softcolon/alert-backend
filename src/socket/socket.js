@@ -25,7 +25,7 @@ socket.on('marketWatch', async(payload) => {
             if (element.script_name !== data?.InstrumentIdentifier) continue;
             const livePrice = data.LastTradePrice;
             const symbol = data.InstrumentIdentifier;
-            if (element.hit_side === constant.HIT_SIDE[0] && element.price <= livePrice) {
+            if (element.hit_side === constant.HIT_SIDE[0] && element.price >= livePrice) {
                 sendTelegramMessage(`
 BUY ALERT ✨
  
@@ -36,15 +36,15 @@ For: ${element.alert_for}
 Comment: ${element.comment}`);
 
                 await removeScriptAndUpdateDetails(alretScript, alretData, element.script_name, element.price, element._id)
-            } else if (element.hit_side === constant.HIT_SIDE[1] && element.price >= livePrice) {
+            } else if (element.hit_side === constant.HIT_SIDE[1] && element.price <= livePrice) {
                 sendTelegramMessage(`
 SELL ALERT ✨
 
 📉 📉 ${symbol},
 Crossed: ₹${element.price},
 Currantly At: ₹${livePrice}
-For: ₹${element.alert_for}
-Comment:₹${element.comment}`);
+For: ${element.alert_for}
+Comment:${element.comment}`);
 
                 await removeScriptAndUpdateDetails(alretScript, alretData, element.script_name, element.price, element._id)
             }
