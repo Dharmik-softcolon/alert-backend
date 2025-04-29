@@ -6,7 +6,8 @@ import {sendTelegramMessage} from "../config/telegram.js";
 export const alretScript = []
 export const alretData = []
 
-export const socket = io(config.socketServerUrl, {
+export const initializeSocketConnection = () => {
+const socket = io(config.socketServerUrl, {
     transports: ['websocket'],
     rejectUnauthorized: false,
 });
@@ -59,3 +60,4 @@ socket.on('connect_error', (err) => {
 socket.on('disconnect', () => {
     console.warn('Disconnected from socket server');
 });
+};

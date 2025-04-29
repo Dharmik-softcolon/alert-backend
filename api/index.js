@@ -3,7 +3,11 @@ import { connectDB } from '../src/config/db.js';
 import config from '../src/config/config.js';
 import moment from 'moment';
 import Route from '../src/routes/index.js';
+import {initializeSocketConnection} from '../src/socket/socket.js';
 import cors from 'cors';
+import cron from 'node-cron';
+
+
 
 const app = express();
 
@@ -14,6 +18,14 @@ app.use(cors({
 }));
 
 connectDB();
+
+initializeSocketConnection()
+
+// Schedule the task to run at 9:15:30 AM daily
+cron.schedule('15 15 9 * * *', () => {
+    console.log('Running scheduled task at 9:15:15 AM');
+    initializeSocketConnection();
+});
 
 app.use(express.json());
 
