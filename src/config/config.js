@@ -12,9 +12,4 @@ export default {
         telegramUrl:process.env.TELEGRAM_URL
     },
     socketServerUrl: process.env.SOCKET_SERVER_URL,
-    stock: {
-        symbol: process.env.STOCK_SYMBOL || 'WIPRO',
-        buyPrice: parseFloat(process.env.BUY_ALERT_PRICE) || 411.25,
-        sellPrice: parseFloat(process.env.SELL_ALERT_PRICE) || 409.00,
-    },
 };

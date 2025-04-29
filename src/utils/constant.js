@@ -1,5 +1,5 @@
 export default {
     ALERT_TYPES: ['TELEGRAM'],
-    HIT_SIDE: ['UPSIDE', 'DOWN_SIDE'],
+    HIT_SIDE: ['BUY', 'SHORT'],
     ALERT_FOR: ['INTRADAY','SWING','WEEKLY','LONGTERM','STOCK_OPTIONS'],
 };
