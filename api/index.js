@@ -1,10 +1,17 @@
 import express from 'express';
 import { connectDB } from '../src/config/db.js';
-// import config from '../src/config/config.js';
+import config from '../src/config/config.js';
 import moment from 'moment';
 import Route from '../src/routes/index.js';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
+
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 
 connectDB();
 
@@ -18,8 +25,8 @@ app.get('/', (req, res) => {
 
 console.log(`CURRANT TIME: [${moment().format('hh:mm A DD/MMM/YYYY')}]`);
 
-// app.listen(config.port, () => {
-//     console.log(`Server running on port ${config.port}`);
-// });
+app.listen(config.port, () => {
+    console.log(`Server running on port ${config.port}`);
+});
 
 export default app

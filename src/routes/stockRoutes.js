@@ -3,10 +3,10 @@ import {createAlert, getAllAlerts, getAlertById, updateAlert, deleteAlert} from 
 
 const route = express.Router();
 
-route.post('/', createAlert);
+route.post('/create', createAlert);
 route.get('/get-all', getAllAlerts);
-route.get('get/:id', getAlertById);
-route.put('update/:id', updateAlert);
-route.delete('delete/:id', deleteAlert);
+route.get('/get/:id', getAlertById);
+route.put('/update/:id', updateAlert);
+route.delete('/delete/:id', deleteAlert);
 
 export default route;

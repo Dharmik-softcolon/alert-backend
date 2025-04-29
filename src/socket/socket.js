@@ -22,7 +22,7 @@ socket.on('marketWatch', async(payload) => {
     const data = payload?.data;
     if (alretData.length > 0) {
         for (const element of alretData) {
-            if (element.script_name !== data.InstrumentIdentifier) continue;
+            if (element.script_name !== data?.InstrumentIdentifier) continue;
 
             const livePrice = data.LastTradePrice;
             const symbol = data.InstrumentIdentifier;
