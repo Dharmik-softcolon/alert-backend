@@ -14,8 +14,7 @@ export const createAlert = async (req, res) => {
             comment: data?.comment
         });
 
-        // update map of script
-        await alretScriptGet();  // Corrected spelling
+        await alretScriptGet();
 
         res.status(201).json({
             statusCode: 201,
@@ -85,6 +84,9 @@ export const updateAlert = async (req, res) => {
                 message: 'Alert not found',
             });
         }
+
+        await alretScriptGet();
+
         return res.status(200).json({
             statusCode: 200,
             message: 'Alert updated successfully',
