@@ -5,6 +5,7 @@ dotenv.config();
 export default {
     port: process.env.PORT || 5000,
     mongoUrl: process.env.MONGO_URL,
+    clientUrl:process.env.CLIENT_URL,
     telegram: {
         token: process.env.TELEGRAM_BOT_TOKEN,
         chatId: process.env.TELEGRAM_CHAT_ID,
