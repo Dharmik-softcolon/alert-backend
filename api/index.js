@@ -21,10 +21,15 @@ connectDB();
 
 initializeSocketConnection()
 
+export const processingAlerts = new Set();
+
 // Schedule the task to run at 9:15:30 AM daily
 cron.schedule('15 15 9 * * *', () => {
     console.log('Running scheduled task at 9:15:15 AM');
-    initializeSocketConnection();
+    // cron.schedule('*/15 * * * *', () => {
+    //     console.log('Running scheduled task every 15 minutes');
+        initializeSocketConnection();
+    // });
 });
 
 app.use(express.json());

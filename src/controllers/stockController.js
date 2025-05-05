@@ -1,11 +1,12 @@
 import StockAlert from '../model/stockAlertModel.js';
 import constant from '../utils/constant.js';
 import {alretScriptGet} from "../utils/function.js";
+import {initializeSocketConnection} from "../socket/socket.js";
 
 // CREATE Alert
 export const createAlert = async (req, res) => {
     try {
-        const data = req.body
+        const data = req?.body
         const alert = await StockAlert.create({
             script_name: data?.stockName,
             hit_side: data?.direction,
@@ -15,6 +16,7 @@ export const createAlert = async (req, res) => {
         });
 
         await alretScriptGet();
+        await initializeSocketConnection();
 
         res.status(201).json({
             statusCode: 201,
@@ -30,7 +32,6 @@ export const createAlert = async (req, res) => {
         });
     }
 };
-
 
 // GET All Alerts
 export const getAllAlerts = async (req, res) => {
@@ -51,7 +52,6 @@ export const getAllAlerts = async (req, res) => {
         });
     }
 };
-
 
 // GET Single Alert by ID
 export const getAlertById = async (req, res) => {
@@ -86,6 +86,7 @@ export const updateAlert = async (req, res) => {
         }
 
         await alretScriptGet();
+        await initializeSocketConnection();
 
         return res.status(200).json({
             statusCode: 200,
@@ -96,7 +97,6 @@ export const updateAlert = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
 
 // DELETE Alert
 export const deleteAlert = async (req, res) => {
