@@ -1,7 +1,8 @@
 import StockAlert from '../model/stockAlertModel.js';
 import constant from '../utils/constant.js';
 import {alretScriptGet} from "../utils/function.js";
-import {initializeSocketConnection} from "../socket/socket.js";
+import {initializeSocketConnection} from "../socket/socketClient.js";
+// import {SocketServerConnection} from "../socket/socketServer.js";
 
 // CREATE Alert
 export const createAlert = async (req, res) => {
@@ -123,4 +124,8 @@ export const deleteAlert = async (req, res) => {
         });
     }
 };
+
+// export const test = async (req, res) => {
+//         SocketServerConnection()
+// };
 

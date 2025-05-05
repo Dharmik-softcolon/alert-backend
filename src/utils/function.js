@@ -1,5 +1,5 @@
 import StockAlert from "../model/stockAlertModel.js";
-import {alretScript,alretData} from "../socket/socket.js";
+import {alretScript,alretData} from "../socket/socketClient.js";
 import moment from "moment/moment.js";
 
 export const alretScriptGet = async () => {

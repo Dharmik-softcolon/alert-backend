@@ -6,6 +6,7 @@ import { sendTelegramMessage } from "../config/telegram.js";
 import { processingAlerts } from "../../api/index.js";
 import StockAlert from "../model/stockAlertModel.js";
 import moment from 'moment';
+// import {SocketServerConnection} from "./socketServer.js";
 
 export const alretScript = [];
 export const alretData = [];
@@ -83,6 +84,8 @@ Comment: ${element.comment}
                 if (alertIndex !== -1) {
                     alretData.splice(alertIndex, 1);
                 }
+
+                // SocketServerConnection()
 
                 processingAlerts.delete(key);
             }

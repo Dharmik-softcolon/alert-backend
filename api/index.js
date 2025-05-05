@@ -3,11 +3,9 @@ import { connectDB } from '../src/config/db.js';
 import config from '../src/config/config.js';
 import moment from 'moment';
 import Route from '../src/routes/index.js';
-import {initializeSocketConnection} from '../src/socket/socket.js';
+import {initializeSocketConnection} from '../src/socket/socketClient.js';
 import cors from 'cors';
 import cron from 'node-cron';
-
-
 
 const app = express();
 
@@ -45,5 +43,3 @@ console.log(`CURRANT TIME: [${moment().format('hh:mm A DD/MMM/YYYY')}]`);
 app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);
 });
-
-export default app
